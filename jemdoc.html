@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">个人主页</div>
+<div class="menu-item"><a href="index.html">中文主页</a></div>
+<div class="menu-item"><a href="index-e.html">英文主页</a></div>
+<div class="menu-item"><a href="publications.html">科研工作</a></div>
+<div class="menu-item"><a href="teaching.html">教学工作</a></div>
+<div class="menu-item"><a href="links.html">重要链接</a></div>
+<div class="menu-item"><a href="jemdoc.html" class="current">jemdoc+MathJax</a></div>
+</td>
+<td id="layout-content">
+<p>
+
+</p>
+<h2>jemdoc </h2>
+<p>
+</p>
+<ul>
+<li><p><a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>能够结合GitHub Pages制作清晰简单的个人学术主页    
+
+</p>
+</li>
+<li><p><a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>的具体命令参考<a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>这是jemdoc官网</a>
+
+
+</p>
+</li>
+</ul>
+<h2>MathJax </h2>
+<p>
+</p>
+<ul>
+<li><p>MathJax是一个开放源代码的JavaScript引擎
+
+</p>
+</li>
+<li><p>MathJax能使用TeX、LaTeX符号和MathML或者AsciiMath写公式
+
+</p>
+</li>
+<li><p>MathJax能将Tex格式转化为MathML格式，在word中使用
+
+</p>
+</li>
+<li><p>MathJax显示数学公式是基于文本的，而非图片
+
+</p>
+</li>
+<li><p><a href="https://www.mathjax.org" target=&ldquo;blank&rdquo;>这是MathJax官网</a>
+
+
+</p>
+</li>
+</ul>
+<h2>jemdoc+MathJax </h2>
+<p>
+</p>
+<ul>
+<li><p><a href="https://github.com/wsshin/jemdoc_mathjax" target=&ldquo;blank&rdquo;>Wsshin</a>将原始的<a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>修改为基于Python3的代码，并加入了支持MathJax等其他特性的功能
+
+</p>
+</li>
+<li><p>使用jemdoc+MathJax能够生成基于文本格式的数学公式，增强可读性
+
+
+</p>
+</li>
+</ul>
+<h2>安装步骤</h2>
+<p>
+</p>
+<ul>
+<li><p>安装<a href="https://www.python.org/" target=&ldquo;blank&rdquo;>Python3</a>或者<a href="https://www.anaconda.com/products/individual" target=&ldquo;blank&rdquo;>Anaconda</a>
+
+</p>
+</li>
+<li><p>安装<a href="https://git-scm.com/" target=&ldquo;blank&rdquo;>git</a>和<a href="https://nodejs.org/zh-cn/" target=&ldquo;blank&rdquo;>node.js</a>
+
+</p>
+</li>
+<li><p>将<a href="https://github.com/wsshin/jemdoc_mathjax" target=&ldquo;blank&rdquo;>Wsshin</a>根目录下的jemdoc文件和Python.exe文件放在同一个文件夹，并将其<b>添加到系统的环境变量中</b>
+
+</p>
+</li>
+<li><p>修改jemdoc文件，将
+
+</p>
+</li>
+</ul>
+<div class="infoblock">
+<div class="blockcontent">
+<p>outfile = io.open(thisout, 'w&rsquo;)
+</p>
+</div></div>
+<p>修改为
+
+</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>outfile = io.open(thisout, 'w&rsquo;, encoding=&ldquo;utf-8&rdquo;)
+</p>
+</div></div>
+<ul>
+<li><p>利用<a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>里面的命令生成.html文件
+
+</p>
+</li>
+<li><p>将文件夹上传GitHub即可生成个人学术主页，如何上传GitHub请参考<a href="https://www.cnblogs.com/du-hong/p/9921214.html" target=&ldquo;blank&rdquo;>这里</a>
+
+
+
+</p>
+</li>
+</ul>
+<h2>坑 </h2>
+<p>
+</p>
+<ul>
+<li><p>坑1：一定要将所有需要的软件<b>添加到系统的环境变量中</b>，否则会报错。
+
+</p>
+</li>
+<li><p>坑2：Python2和3的问题：<a href="https://jemnz.com/" target=&ldquo;blank&rdquo;>Jacob Mattingley</a>编写的<a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>基于Python2, 如果电脑安装的是Python3, 则运行会报错。
+<a href="https://github.com/wsshin/jemdoc_mathjax" target=&ldquo;blank&rdquo;>Wsshin</a>将Python2代码改为Python3并支持MathJax。
+
+</p>
+</li>
+<li><p>坑3：编码问题：无论是用<a href="http://jemdoc.jaboc.net/index.html" target=&ldquo;blank&rdquo;>jemdoc</a>还是用<a href="https://github.com/wsshin/jemdoc_mathjax" target=&ldquo;blank&rdquo;>jemdoc+MathJax</a>, 最后生成的.html文件，中文都显示
+乱码，解决办法是打开jemdoc文件，将
+
+</p>
+</li>
+</ul>
+<div class="infoblock">
+<div class="blockcontent">
+<p>outfile = io.open(thisout, 'w&rsquo;)
+</p>
+</div></div>
+<p>修改为
+
+</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>outfile = io.open(thisout, 'w&rsquo;, encoding=&ldquo;utf-8&rdquo;)
+</p>
+</div></div>
+<p>即可生成没有乱码.html文件。</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

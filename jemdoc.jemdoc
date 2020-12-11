@@ -1,0 +1,77 @@
+# jemdoc: menu{MENU}{jemdoc.html}, nofooter  
+
+
+== jemdoc 
+
+    - [http://jemdoc.jaboc.net/index.html jemdoc]能够结合GitHub Pages制作清晰简单的个人学术主页    
+    
+    - [http://jemdoc.jaboc.net/index.html jemdoc]的具体命令参考[http://jemdoc.jaboc.net/index.html 这是jemdoc官网]
+
+
+== MathJax 
+
+    - MathJax是一个开放源代码的JavaScript引擎
+	
+	- MathJax能使用TeX、LaTeX符号和MathML或者AsciiMath写公式
+	
+	- MathJax能将Tex格式转化为MathML格式，在word中使用
+	
+	- MathJax显示数学公式是基于文本的，而非图片
+	
+	- [https://www.mathjax.org 这是MathJax官网]
+	
+
+== jemdoc+MathJax 
+
+    - [https://github.com/wsshin/jemdoc_mathjax Wsshin]将原始的[http://jemdoc.jaboc.net/index.html jemdoc]修改为基于Python3的代码，并加入了支持MathJax等其他特性的功能
+	
+	- 使用jemdoc+MathJax能够生成基于文本格式的数学公式，增强可读性
+
+
+== 安装步骤
+
+    - 安装[https://www.python.org/ Python3]或者[https://www.anaconda.com/products/individual Anaconda]
+	
+	- 安装[https://git-scm.com/ git]和[https://nodejs.org/zh-cn/ node.js]
+	
+	- 将[https://github.com/wsshin/jemdoc_mathjax Wsshin]根目录下的jemdoc文件和Python.exe文件放在同一个文件夹，并将其*添加到系统的环境变量中*
+	
+	- 修改jemdoc文件，将
+	
+	~~~
+	  outfile = io.open(thisout, 'w')
+	~~~
+	
+	  修改为
+	  
+	~~~
+	  outfile = io.open(thisout, 'w', encoding="utf-8")
+	~~~
+	
+	- 利用[http://jemdoc.jaboc.net/index.html jemdoc]里面的命令生成.html文件
+	
+	- 将文件夹上传GitHub即可生成个人学术主页，如何上传GitHub请参考[https://www.cnblogs.com/du-hong/p/9921214.html 这里]
+	
+
+
+== 坑 
+
+    - 坑1：一定要将所有需要的软件*添加到系统的环境变量中*，否则会报错。
+
+    - 坑2：Python2和3的问题：[https://jemnz.com/ Jacob Mattingley]编写的[http://jemdoc.jaboc.net/index.html jemdoc]基于Python2, 如果电脑安装的是Python3, 则运行会报错。
+	  [https://github.com/wsshin/jemdoc_mathjax Wsshin]将Python2代码改为Python3并支持MathJax。
+	  
+    - 坑3：编码问题：无论是用[http://jemdoc.jaboc.net/index.html jemdoc]还是用[https://github.com/wsshin/jemdoc_mathjax jemdoc+MathJax], 最后生成的.html文件，中文都显示
+	  乱码，解决办法是打开jemdoc文件，将
+	  
+	~~~
+	  outfile = io.open(thisout, 'w')
+	~~~
+	
+	  修改为
+	  
+	~~~
+	  outfile = io.open(thisout, 'w', encoding="utf-8")
+	~~~
+	
+	即可生成没有乱码.html文件。
